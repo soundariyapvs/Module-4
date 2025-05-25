@@ -1,45 +1,51 @@
 # Exp.No:20  
 ## SEB - ARITHMETIC CALCULATION USING CLASS
 
----
-
 ### AIM  
-To write a Python program to perform addition and division operations using a class. The class should be named `Saveetha`, and the function names should be `setvalues` (to set `a` and `b` values), `add`, and `div`. The program should handle the following cases:  
-- `choice 1` → Perform addition  
-- `choice 2` → Perform division  
-- `choice 0` → Exit  
-- For other choices, print 'Invalid choice'
-
----
+To write a Python program that uses a class to perform **modulo** and **integer division** operations, allowing the user to select which operation to perform through a menu-driven loop.
 
 ### ALGORITHM
 
-1. Begin the program.  
-2. Create a class `Saveetha`.  
-3. Define the following methods inside the `Saveetha` class:  
-   - `__init__(self)`: Initializes `a` and `b` to zero.  
-   - `setvalues(self, a, b)`: Sets the values of `a` and `b`.  
-   - `add(self)`: Performs the addition operation.  
-   - `div(self)`: Performs the division operation. If `b` is zero, returns an error message for division by zero.  
-4. Create a `main()` function.  
-5. Take input from the user for the values of `a` and `b` using `setvalues(a, b)` method.  
-6. Use a `while True` loop to repeatedly ask the user for a choice:  
-   - If the choice is 1, call the `add()` method and print the result.  
-   - If the choice is 2, call the `div()` method and print the result. Handle division by zero.  
-   - If the choice is 0, print "Exiting!" and exit the loop.  
-   - If the choice is not 1, 2, or 0, print "Invalid choice".  
-7. Terminate the program.
-
----
+1. Define a class `SEC` with methods `setvalues(a, b)`, `modulo()`, and `division()`.
+2. Accept two integer inputs for `a` and `b`.
+3. Create an object of the `SEC` class and set the values using `setvalues()`.
+4. Create a loop that allows the user to choose between the modulo and division operations.
+5. Exit the loop when the user selects `0`.
 
 ### PROGRAM
 
 ```
+class SEC:
+    def setvalues(self, a, b):
+        self.a = a
+        self.b = b
 
+    def modulo(self):
+        return self.a % self.b
 
+    def division(self):
+        return self.a // self.b
 
+a = int(input())
+b = int(input())
+r = SEC()
+r.setvalues(a, b)
+
+while True:
+    choice = int(input("Enter 1 for Modulo, 2 for Division, 0 to Exit: "))
+    if choice == 1:
+        print(f"Result:  {r.modulo()}")
+    elif choice == 2:
+        print(f"Result:  {r.division()}")
+    elif choice == 0:
+        print('Exiting!')
+        break
+    else:
+        print('Invalid input')
 ```
 
 ### OUTPUT
+![image](https://github.com/user-attachments/assets/daa5b027-6744-448f-8351-8346bea7110f)
 
 ### RESULT
+Thus the program was successfully executed, performing modulo and integer division operations as per user input, and handling invalid choices properly through a menu-driven interface.
